@@ -62,7 +62,7 @@ def generate_csv(data, header):
     writer.writerows(data)
     return output.getvalue().encode('utf-8')
 
-st.title("Conversor de PDF para CSV - AGD/IAG")
+st.title("Conversor ELTA LOG - uMov")
 
 uploaded_file = st.file_uploader("Selecione um arquivo PDF", type=["pdf"])
 if uploaded_file:
