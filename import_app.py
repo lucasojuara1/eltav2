@@ -21,7 +21,9 @@ def extract_data_from_pdf(pdf_file):
             if match:
                 servicelocal = match.group(1)
                 date_time = match.group(3)
-                date, hour = date_time.split(" ")[:2]
+                date, hour_full = date_time.split(" ")[:2]
+                # Ajusta a hora para o formato hh;mm
+                hour = hour_full[:5].replace(":", ";")
                 alternative_id_match = re.search(r'Ficha (\d+-\d+)', line)
                 alternative_identifier = alternative_id_match.group(1) if alternative_id_match else ""
                 observation = lines[i + 1] + " " + lines[i + 2] if i + 2 < len(lines) else ""
