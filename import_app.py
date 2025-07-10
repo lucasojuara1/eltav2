@@ -30,7 +30,7 @@ def extract_data_from_pdf(pdf_file):
                 observation = sanitize_text(observation)
                 if alternative_identifier:
                     observation += f" / {alternative_identifier}"
-                alternative_identifier_type = "entregaCompartilhada" if alternative_identifier else "coletaJE"
+                alternative_identifier_type = "entregaCompartilhada" if alternative_identifier else "coleta"
                 extracted_data.append([
                     "I",
                     "",  # agent (to be filled later)
